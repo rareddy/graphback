@@ -49,7 +49,7 @@ export class GraphbackEngine {
     const schemaConfig = this.config.plugins?.SchemaCRUD
     const schemaCRUDPlugin = new SchemaCRUDPlugin(schemaConfig);
     // TODO proper location mapping
-    const clientCRUDPlugin = new ClientCRUDPlugin({ output: 'ts', outputPath: './client' })
+    const clientCRUDPlugin = new ClientCRUDPlugin({ output: 'gql', outputPath: './client' })
     pluginEngine.registerPlugin(schemaCRUDPlugin);
     pluginEngine.registerPlugin(clientCRUDPlugin);
     const resultSchema = pluginEngine.execute().getSchema();
